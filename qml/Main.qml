@@ -98,9 +98,10 @@ GameWindow {
                     textSize: 10
 
                     onClicked: {
-                        var component = Qt.createComponent("Scenes/OrderNum.qml")
-                        var window = component.createObject(gameWindow)
-                        window.show
+                        menuu.visible = false
+                        var sortNumber = Qt.createComponent("Scenes/sortNumber.qml")
+                        var windowsortNumber = sortNumber.createObject(gameWindow)
+                        windowsortNumber.show
                     }
                 }
 

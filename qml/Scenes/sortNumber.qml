@@ -11,6 +11,13 @@ Scene {
     property var removedNumberList: []
     property int selectedIndex: -1
     property var selectedId: ''
+    property int numberOfPassed: 0
+
+
+    SoundEffect {
+        id: sound1
+        source: "../../assets/sound/false.wav"
+    }
 
 
     SoundEffect {
@@ -18,11 +25,12 @@ Scene {
         source: "../../assets/sound/true.wav"
     }
 
-
     SoundEffect {
-        id: sound1
-        source: "../../assets/sound/false.wav"
+        id: sound3
+        source: "../../assets/sound/done_level.wav"
     }
+
+
 
     function checkIfremoved(number) {
 
@@ -49,6 +57,26 @@ Scene {
                    removedNumberList[selectedIndex] = -1;
                    id.source = "../../assets/" + numberList[index] + ".png"
                    sound2.play();
+                   numberOfPassed++;
+                   if(numberOfPassed >= 3) {
+                       counterSortLevel++;
+                       sound3.play();
+                       if(counterSortLevel < 3) {
+                           initNumber();
+                           sortNumber.visible = false;
+                           var sortNumberNextLevel = Qt.createComponent("sortNumber.qml");
+                           var windowsortNumberNextLevel = sortNumberNextLevel.createObject(gameWindow);
+                           windowsortNumberNextLevel.show;
+                       } else {
+                           sortNumber.visible = false;
+                           var sortNumberNextLevel = Qt.createComponent("congratulation.qml");
+                           var windowsortNumberNextLevel = sortNumberNextLevel.createObject(gameWindow);
+                           windowsortNumberNextLevel.show;
+                       }
+
+
+
+                   }
                } else {
                    sound1.play();
                }
@@ -59,7 +87,7 @@ Scene {
 
 
 
-    Component.onCompleted: {
+    function initNumber() {
         if(firstTime === 0) {
             for(var i = 0; i < 6; i++) {
                 var randomNumber = 0;
@@ -81,7 +109,11 @@ Scene {
         }
         firstTime = 1;
 
+    }
 
+    Component.onCompleted: {
+
+        initNumber();
 
     }
 

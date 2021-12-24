@@ -11,6 +11,8 @@ GameWindow {
     screenHeight: 640
 
     property int counter: 0
+    property var sortNumber: ''
+    property var windowsortNumber: ''
 
     Scene {
         id: menuu
@@ -99,8 +101,8 @@ GameWindow {
 
                     onClicked: {
                         menuu.visible = false
-                        var sortNumber = Qt.createComponent("Scenes/sortNumber.qml")
-                        var windowsortNumber = sortNumber.createObject(gameWindow)
+                        sortNumber = Qt.createComponent("Scenes/sortNumber.qml")
+                        windowsortNumber = sortNumber.createObject(gameWindow)
                         windowsortNumber.show
                     }
                 }

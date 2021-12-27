@@ -69,8 +69,8 @@ Scene {
         AppButton{
             text: "رجوع"
             x:20
-            width: sumNum1.dp(120)
-            minimumHeight: sumNum1.dp(30)
+            width: sortNumber.dp(120)
+            minimumHeight: sortNumber.dp(30)
             radius: 40
             backgroundColor: "#00aaf9"
             borderColor: "#1db4f9"
@@ -80,6 +80,7 @@ Scene {
             textSize: 10
 
             onClicked: {
+                backmusic.play();
                 sortNumber.visible = false
                 menuu.visible = true
 

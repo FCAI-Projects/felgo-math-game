@@ -27,7 +27,8 @@ GameWindow {
 
             BackgroundMusic {
                     id: backmusic
-                    source: "../assets/sound/alexander-nakarada-silly-intro.mp3"
+                    source: "../assets/sound/alexander-nakarada-silly-intro.wav"
+                    volume: 0.3
                }
 
             Image {
@@ -116,6 +117,7 @@ GameWindow {
                     textSize: 10
 
                     onClicked: {
+                        backmusic.stop();
                         menuu.visible = false;
                         var component = Qt.createComponent("Scenes/learn_numbers.qml")
                         var window = component.createObject(gameWindow)

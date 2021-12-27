@@ -73,9 +73,6 @@ Scene {
                            var windowsortNumberNextLevel = sortNumberNextLevel.createObject(gameWindow);
                            windowsortNumberNextLevel.show;
                        }
-
-
-
                    }
                } else {
                    sound1.play();

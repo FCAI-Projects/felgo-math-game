@@ -66,12 +66,13 @@ GameWindow {
 
             Column{
                 anchors.centerIn: parent
-                spacing: 10
+                spacing: 2
 
-                AppButton{
+               AppButton{
                     text: "جمع الارقام"
                     width: 140
                     height: 35
+
                     radius: 40
                     backgroundColor: "#00aaf9"
                     borderColor: "#1db4f9"
@@ -107,7 +108,26 @@ GameWindow {
                         windowsortNumber.show;
                     }
                 }
+                AppButton{
+                    text: "تعلم الارقام"
+                    width: 140
+                    height: 35
+                    radius: 40
+                    backgroundColor: "#00aaf9"
+                    borderColor: "#1db4f9"
+                    backgroundColorPressed: "#0085bf"
+                    borderWidth: 2
+                    fontBold: true
+                    textSize: 10
 
+                    onClicked: {
+
+                        menuu.visible = false;
+                        var component = Qt.createComponent("Scenes/learn_numbers.qml")
+                        var window = component.createObject(gameWindow)
+                        window.show
+                    }
+                }
                 AppButton{
                     text: "خروج"
                     width: 140

@@ -29,26 +29,6 @@ Scene {
             }
         }
 
-        AppButton{
-            text: "القائمة"
-            x: 400
-            width: 80
-            height: 35
-            radius: 40
-            backgroundColor: "#00aaf9"
-            borderColor: "#1db4f9"
-            backgroundColorPressed: "#0085bf"
-            borderWidth: 2
-            fontBold: true
-            textSize: 10
-
-            onClicked: {
-                sumNum1.visible = false
-                sumNum2.visible = false
-                sumNum3.visible = false
-            }
-        }
-
 //=========================== num 1 ====================
         Rectangle {
             id: num1
@@ -298,6 +278,13 @@ Scene {
               onPressed:{
                   animation3.start()
                   sound2.play()
+
+                  sumNum1.visible = false
+                  sumNum2.visible = false
+                  sumNum3.visible = false
+                  var sortNumberNextLevel = Qt.createComponent("congratulation.qml");
+                  var windowsortNumberNextLevel = sortNumberNextLevel.createObject(gameWindow);
+                  windowsortNumberNextLevel.show;
                 }
 
             }

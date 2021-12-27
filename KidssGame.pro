@@ -64,4 +64,5 @@ DISTFILES += \
     qml/Scenes/SumNum_level2.qml \
     qml/Scenes/SumNum_level3.qml \
     qml/Scenes/congratulation.qml \
+    qml/Scenes/learn_numbers.qml \
     qml/Scenes/sortNumber.qml

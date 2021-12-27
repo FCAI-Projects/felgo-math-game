@@ -30,25 +30,16 @@ Scene {
             }
         }
 
-        AppButton{
-            text: "التالي"
-            x: 400
-            width: 80
-            height: 35
-            radius: 40
-            backgroundColor: "#00aaf9"
-            borderColor: "#1db4f9"
-            backgroundColorPressed: "#0085bf"
-            borderWidth: 2
-            fontBold: true
-            textSize: 10
 
-            onClicked: {
-                var component = Qt.createComponent("SumNum_level3.qml")
-                var window = component.createObject(gameWindow)
-                window.show
-                sumNum2.visible = false
-            }
+//=========================== sound ====================
+        SoundEffect {
+            id: soundFalse
+            source: "../../assets/sound/false.wav"
+        }
+
+        SoundEffect {
+            id: soundTrue
+            source: "../../assets/sound/true.wav"
         }
 //=========================== num 1 ====================
         Rectangle {
@@ -164,18 +155,18 @@ Scene {
               }
             }
 
-          SoundEffect {
-              id: sound1
-              source: "../../assets/sound/true.wav"
-          }
-
           MouseArea {
               id: mo1
               anchors.fill: parent
               onPressed:{
                   animation1.start()
-                  sound1.play()
+                  soundTrue.play()
                   counter++
+
+                  sumNum2.visible = false;
+                  var sortNumberNextLevel = Qt.createComponent("SumNum_level3.qml");
+                  var windowsortNumberNextLevel = sortNumberNextLevel.createObject(gameWindow);
+                  windowsortNumberNextLevel.show;
                 }
             }
         }
@@ -228,17 +219,12 @@ Scene {
                }
             }
 
-          SoundEffect {
-              id: sound2
-              source: "../../assets/sound/false.wav"
-          }
-
           MouseArea {
               id: mo2
               anchors.fill: parent
               onPressed:{
                   animation2.start()
-                  sound2.play()
+                  soundFalse.play()
                 }
 
             }
@@ -298,7 +284,7 @@ Scene {
               anchors.fill: parent
               onPressed:{
                   animation3.start()
-                  sound2.play()
+                  soundFalse.play()
                 }
 
             }

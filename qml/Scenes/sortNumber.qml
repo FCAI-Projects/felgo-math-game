@@ -141,25 +141,6 @@ Scene {
             }
         }
 
-        AppButton{
-            text: "التالي"
-            x: parent.width - 100
-            width: 80
-            height: 35
-            radius: 40
-            backgroundColor: "#00aaf9"
-            borderColor: "#1db4f9"
-            backgroundColorPressed: "#0085bf"
-            borderWidth: 2
-            fontBold: true
-            textSize: 10
-
-            onClicked: {
-
-            }
-        }
-
-
         // options numbers
 
         Rectangle{

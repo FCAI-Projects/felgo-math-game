@@ -7,8 +7,6 @@ import QtMultimedia 5.9
 GameWindow {
     id: gameWindow
     activeScene: menuu
-    screenWidth: 960
-    screenHeight: 640
 
     property int counter: 0
     property int counterSortLevel: 0
@@ -16,12 +14,10 @@ GameWindow {
 
     Scene {
         id: menuu
-        width: 480
-        height: 320
 
         Rectangle {
             id: rectangle
-            anchors.fill: parent.gameWindowAnchorItem
+            anchors.fill: parent.fullWindowAnchorItem
 
             Image {
                 id: background
@@ -58,7 +54,7 @@ GameWindow {
                 id: textElement
                 text: qsTr("الحساب للاطفال")
                 color: "#232bff"
-                font.pixelSize: 55
+                font.pixelSize: 40
                 font.family: "Urdu Typesetting"
                 font.bold: true
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -66,13 +62,12 @@ GameWindow {
 
             Column{
                 anchors.centerIn: parent
-                spacing: 2
+                spacing: menuu.dp(10)
 
                AppButton{
                     text: "جمع الارقام"
-                    width: 140
-                    height: 35
-
+                    width: menuu.dp(200)
+                    minimumHeight: 20
                     radius: 40
                     backgroundColor: "#00aaf9"
                     borderColor: "#1db4f9"
@@ -90,8 +85,8 @@ GameWindow {
 
                 AppButton{
                     text: "ترتيب الارقام"
-                    width: 140
-                    height: 35
+                    width: menuu.dp(200)
+                    minimumHeight: 20
                     radius: 40
                     backgroundColor: "#00aaf9"
                     borderColor: "#1db4f9"
@@ -110,8 +105,8 @@ GameWindow {
                 }
                 AppButton{
                     text: "تعلم الارقام"
-                    width: 140
-                    height: 35
+                    width: menuu.dp(200)
+                    minimumHeight: 20
                     radius: 40
                     backgroundColor: "#00aaf9"
                     borderColor: "#1db4f9"
@@ -121,7 +116,6 @@ GameWindow {
                     textSize: 10
 
                     onClicked: {
-
                         menuu.visible = false;
                         var component = Qt.createComponent("Scenes/learn_numbers.qml")
                         var window = component.createObject(gameWindow)
@@ -130,8 +124,8 @@ GameWindow {
                 }
                 AppButton{
                     text: "خروج"
-                    width: 140
-                    height: 35
+                    width: menuu.dp(200)
+                    minimumHeight: 20
                     radius: 40
                     backgroundColor: "#00aaf9"
                     borderColor: "#1db4f9"

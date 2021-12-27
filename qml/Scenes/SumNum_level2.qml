@@ -7,15 +7,15 @@ Scene {
 
     Rectangle {
         id: rectangle
-        anchors.fill: parent.gameWindowAnchorItem
+        anchors.fill: parent.fullWindowAnchorItem
         color: "#83CFF3"
         anchors.bottomMargin: -50
 
         AppButton{
             text: "رجوع"
             x:20
-            width: 80
-            height: 35
+            width: sumNum1.dp(120)
+            minimumHeight: sumNum1.dp(20)
             radius: 40
             backgroundColor: "#00aaf9"
             borderColor: "#1db4f9"
@@ -174,7 +174,7 @@ Scene {
 //=========================== num 2 ====================
         Rectangle {
           id: ans2
-          x: 180
+          x: (parent.width / 2) - 80
           y: 180
           width: 110
           height: 110
@@ -206,14 +206,14 @@ Scene {
                   NumberAnimation {
                     target: ans2
                     property: "x"
-                    to: 200
+                    to: ans2.x + 10
                     duration: 1000
                   }
 
                   NumberAnimation {
                     target: ans2
                     property: "x"
-                    to: 180
+                    to: ans2.x
                     duration: 1000
                   }
                }
@@ -233,7 +233,7 @@ Scene {
 //=========================== num 3 ====================
         Rectangle {
           id: ans3
-          x:330
+          x: parent.width - 140
           y: 180
           width: 110
           height: 110
@@ -266,14 +266,14 @@ Scene {
                   NumberAnimation {
                     target: ans3
                     property: "x"
-                    to: 350
+                    to: ans3.x + 10
                     duration: 1000
                   }
 
                   NumberAnimation {
                     target: ans3
                     property: "x"
-                    to: 330
+                    to: ans3.x
                     duration: 1000
                   }
                }

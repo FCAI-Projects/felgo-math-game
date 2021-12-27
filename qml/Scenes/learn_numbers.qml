@@ -17,60 +17,60 @@ Scene {
 
     SoundEffect {
         id: sound1
-        source: "../../assets/sound/false.wav"
+        source: "../../assets/sound/1.wav"
     }
 
     SoundEffect {
         id: sound2
-        source: "../../assets/sound/false.wav"
+        source: "../../assets/sound/2.wav"
     }
 
     SoundEffect {
         id: sound3
-        source: "../../assets/sound/false.wav"
+        source: "../../assets/sound/3.wav"
     }
 
     SoundEffect {
         id: sound4
-        source: "../../assets/sound/false.wav"
+        source: "../../assets/sound/4.wav"
     }
 
     SoundEffect {
         id: sound5
-        source: "../../assets/sound/false.wav"
+        source: "../../assets/sound/5.wav"
     }
 
     SoundEffect {
         id: sound6
-        source: "../../assets/sound/false.wav"
+        source: "../../assets/sound/6.wav"
     }
 
     SoundEffect {
         id: sound7
-        source: "../../assets/sound/false.wav"
+        source: "../../assets/sound/7.wav"
     }
 
     SoundEffect {
         id: sound8
-        source: "../../assets/sound/false.wav"
+        source: "../../assets/sound/8.wav"
     }
 
     SoundEffect {
         id: sound9
-        source: "../../assets/sound/false.wav"
+        source: "../../assets/sound/9.wav"
     }
 
     Rectangle {
         id: rectangle
-        anchors.fill: parent.gameWindowAnchorItem
+        anchors.fill: parent.fullWindowAnchorItem
         color: "#83CFF3"
         anchors.bottomMargin: -50
 
         AppButton{
             text: "رجوع"
             x:20
-            width: 80
-            height: 35
+            width: sumNum1.dp(120)
+            minimumHeight: sumNum1.dp(30)
             radius: 40
             backgroundColor: "#00aaf9"
             borderColor: "#1db4f9"
@@ -165,94 +165,12 @@ Scene {
                }
           }
 
-    }
 
-    // row 2 +++++++++++++++++++++++++++++++
-    Rectangle{
-      id: num4
-      x:parent.width / 3.7
-      y: 150
-      width: 50
-      height: 50
-      color: "#83CFF3"
-
-
-
-      AppImage {
-          id: pic4
-          width: 40
-          height: 40
-          x: 5
-          y: 5
-          source: "../../assets/4.png"
-          MouseArea {
-              id: mo4
-              anchors.fill: parent
-              onPressed:{
-
-                  sound4.play();
-                }
-            }
-
-      }
-
-
-    }
-    Rectangle{
-      id: num5
-      x: parent.width / 2.3
-      y: 150
-      width: 50
-      height: 50
-      color: "#83CFF3"
-
-      Image {
-          x: 5
-          y: 5
-          id: pic5
-          anchors.fill: parent
-          source: "../../assets/5.png"
-          MouseArea {
-              id: mo5
-              anchors.fill: parent
-              onPressed:{
-
-                  sound5.play();
-                }
-            }
-           }
-      }
-
-    Rectangle{
-      id: num6
-      x: parent.width / 1.7
-      y: 150
-      width: 50
-      height: 50
-      color: "#83CFF3"
-
-      Image {
-          x: 5
-          y: 5
-          id: pic6
-          anchors.fill: parent
-          source: "../../assets/6.png"
-          MouseArea {
-              id: mo6
-              anchors.fill: parent
-              onPressed:{
-                  sound6.play();
-                }
-            }
-           }
-      }
-
-
-    // row 3 +++++++++++++++++++++++++++++++
-    Rectangle{
-          id: num7
+        // row 2 +++++++++++++++++++++++++++++++
+        Rectangle{
+          id: num4
           x:parent.width / 3.7
-          y: 230
+          y: 150
           width: 50
           height: 50
           color: "#83CFF3"
@@ -260,18 +178,18 @@ Scene {
 
 
           AppImage {
-              id: pic7
+              id: pic4
               width: 40
               height: 40
               x: 5
               y: 5
-              source: "../../assets/7.png"
+              source: "../../assets/4.png"
               MouseArea {
-                  id: mo7
+                  id: mo4
                   anchors.fill: parent
                   onPressed:{
 
-                      sound7.play();
+                      sound4.play();
                     }
                 }
 
@@ -280,9 +198,9 @@ Scene {
 
         }
         Rectangle{
-          id: num8
+          id: num5
           x: parent.width / 2.3
-          y: 230
+          y: 150
           width: 50
           height: 50
           color: "#83CFF3"
@@ -290,24 +208,24 @@ Scene {
           Image {
               x: 5
               y: 5
-              id: pic8
+              id: pic5
               anchors.fill: parent
-              source: "../../assets/8.png"
+              source: "../../assets/5.png"
               MouseArea {
-                  id: mo8
+                  id: mo5
                   anchors.fill: parent
                   onPressed:{
 
-                      sound8.play();
+                      sound5.play();
                     }
                 }
                }
           }
 
         Rectangle{
-          id: num9
+          id: num6
           x: parent.width / 1.7
-          y: 230
+          y: 150
           width: 50
           height: 50
           color: "#83CFF3"
@@ -315,20 +233,102 @@ Scene {
           Image {
               x: 5
               y: 5
-              id: pic9
+              id: pic6
               anchors.fill: parent
-              source: "../../assets/9.png"
+              source: "../../assets/6.png"
               MouseArea {
-                  id: mo9
+                  id: mo6
                   anchors.fill: parent
                   onPressed:{
-
-                      sound9.play();
+                      sound6.play();
                     }
                 }
                }
           }
 
+
+        // row 3 +++++++++++++++++++++++++++++++
+        Rectangle{
+              id: num7
+              x:parent.width / 3.7
+              y: 230
+              width: 50
+              height: 50
+              color: "#83CFF3"
+
+
+
+              AppImage {
+                  id: pic7
+                  width: 40
+                  height: 40
+                  x: 5
+                  y: 5
+                  source: "../../assets/7.png"
+                  MouseArea {
+                      id: mo7
+                      anchors.fill: parent
+                      onPressed:{
+
+                          sound7.play();
+                        }
+                    }
+
+              }
+
+
+            }
+        Rectangle{
+              id: num8
+              x: parent.width / 2.3
+              y: 230
+              width: 50
+              height: 50
+              color: "#83CFF3"
+
+              Image {
+                  x: 5
+                  y: 5
+                  id: pic8
+                  anchors.fill: parent
+                  source: "../../assets/8.png"
+                  MouseArea {
+                      id: mo8
+                      anchors.fill: parent
+                      onPressed:{
+
+                          sound8.play();
+                        }
+                    }
+                   }
+              }
+
+        Rectangle{
+              id: num9
+              x: parent.width / 1.7
+              y: 230
+              width: 50
+              height: 50
+              color: "#83CFF3"
+
+              Image {
+                  x: 5
+                  y: 5
+                  id: pic9
+                  anchors.fill: parent
+                  source: "../../assets/9.png"
+                  MouseArea {
+                      id: mo9
+                      anchors.fill: parent
+                      onPressed:{
+
+                          sound9.play();
+                        }
+                    }
+                   }
+              }
+
+    }
 }
 
 

@@ -7,7 +7,7 @@ Scene {
 
     Rectangle {
         id: rectangle
-        anchors.fill: parent.gameWindowAnchorItem
+        anchors.fill: parent.fullWindowAnchorItem
         color: "#83CFF3"
         anchors.bottomMargin: -50
 
@@ -28,8 +28,8 @@ Scene {
             text: "القائمة"
             x: (parent.width / 2) - 40
             y: (parent.height / 2) - 30
-            width: 80
-            height: 35
+            width: sumNum1.dp(120)
+            minimumHeight: sumNum1.dp(20)
             radius: 40
             backgroundColor: "#00aaf9"
             borderColor: "#1db4f9"

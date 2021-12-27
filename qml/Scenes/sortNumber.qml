@@ -56,6 +56,7 @@ Scene {
                if(index === removedNumberList[selectedIndex]) {
                    removedNumberList[selectedIndex] = -1;
                    id.source = "../../assets/" + numberList[index] + ".png"
+                   selectedId.visible = false
                    sound2.play();
                    numberOfPassed++;
                    if(numberOfPassed >= 3) {
@@ -64,14 +65,14 @@ Scene {
                        if(counterSortLevel < 3) {
                            initNumber();
                            sortNumber.visible = false;
-                           var sortNumberNextLevel = Qt.createComponent("sortNumber.qml");
-                           var windowsortNumberNextLevel = sortNumberNextLevel.createObject(gameWindow);
-                           windowsortNumberNextLevel.show;
+                           const sortNumberNextLevel = Qt.createComponent("sortNumber.qml");
+                           const windowsortNumberNextLevel = sortNumberNextLevel.createObject(gameWindow);
+                           windowsortNumberNextLevel.show = true;
                        } else {
                            sortNumber.visible = false;
-                           var sortNumberNextLevel = Qt.createComponent("congratulation.qml");
-                           var windowsortNumberNextLevel = sortNumberNextLevel.createObject(gameWindow);
-                           windowsortNumberNextLevel.show;
+                           const sortNumberNextLevel = Qt.createComponent("congratulation.qml");
+                           const windowsortNumberNextLevel = sortNumberNextLevel.createObject(gameWindow);
+                           windowsortNumberNextLevel.show = true;
                        }
                    }
                } else {
@@ -117,15 +118,15 @@ Scene {
 
     Rectangle {
         id: rectangle
-        anchors.fill: parent.gameWindowAnchorItem
+        anchors.fill: parent.fullWindowAnchorItem
         color: "#83CFF3"
         anchors.bottomMargin: -50
 
         AppButton{
             text: "رجوع"
             x:20
-            width: 80
-            height: 35
+            width: sumNum1.dp(120)
+            minimumHeight: sumNum1.dp(30)
             radius: 40
             backgroundColor: "#00aaf9"
             borderColor: "#1db4f9"
@@ -137,7 +138,6 @@ Scene {
             onClicked: {
                 sortNumber.visible = false
                 menuu.visible = true
-
             }
         }
 
